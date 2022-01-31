@@ -13,7 +13,7 @@ public class AngleTest : MonoBehaviour
     Vector3 originPos;
     Rigidbody ballRb;
     public GameObject ball;
-    // Start is called before the first frame update
+    // Start is called before the first frame update HelloTest
     void Start()
     {
         originPos  = ball.transform.position;
