@@ -1,0 +1,49 @@
+Rotation, ohne Motor:
+Damper= wie leicht/schwer sich das Ding dreht
+
+Rotation mit Spring (Geht immer zurück zu TargetPos)
+Target= Winkel zu dem es zurück geht
+Spring=Wie doll
+Damper= wie schnell
+
+Rotation mit Motor (dreht sich von alleine)
+Target Velocity= wie schnell sich das drehen soll
+Force= wie doll es sich von ball beinflussen lässt
+
+Beweglich linear (geht von einem Punkt zum anderen)
+
+Beweglich sprunghaft
+
+Beweglich mit Rotation dran 
+TargetPos bei Spring =0, damit zurück zur Mitte
+Damper= wie empfindlich
+
+Schrumpfend
+minScale= kleinste Größe bevor es zerstört ist
+shrink Times= wie oft gegen Obejkt bevor kaputt
+
+On or Off
+TimeOn= Zeit in s wie lange an
+TimeOf= Zeit in s wie lange aus
+Haken Scale/Haken move= Soll Objekt größer/kleiner oder vor/zurück gehen !Scale geht vor wenn beide an
+SwitchSpeed= Wie lange wechsel dauert
+
+Schalter
+Zugewiesenes Objekt ist Schalter
+Switch Obj= Objekt das durch Schalter geändert wird
+Go Back Z= Z Position wenn weg
+Go Forward Z = Z Poition wenn da
+Speed= Wie schnell das weg geht
+
+Toggle
+Verbundende Objekte
+! Geht von Ball aus nicht von Objekten
+
+groß klein
+Objekt wächst/schrumpt zwischen 2 Grenzen
+minScale= unter Grenze
+maxScale= obere Grenze
+speed= Geschwindigkeit (ca Zeit in s)
+
+Beschleunigungszone/Windzone -> nur optisch anders  (man könnte bei Windzone noch ändern dass alle Objekte beinflusst werden und nicht nur ball)
+forceDir= Richtung wie beschleunigt werden soll (Werte mind >5)
