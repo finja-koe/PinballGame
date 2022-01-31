@@ -10,6 +10,7 @@ public class AngleTest : MonoBehaviour
     float jumpDir;
     float jumpDirMax=5;
     float jumph=5.5f;
+    float varTest;
     Vector3 originPos;
     Rigidbody ballRb;
     public GameObject ball;
