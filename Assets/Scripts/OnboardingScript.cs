@@ -99,11 +99,13 @@ public class OnboardingScript : MonoBehaviour
     {
         serialScript.closePort();
         lightAnimation.SetTrigger("TurnOn");
+        lightAnimation.ResetTrigger("TurnOff");
     }
 
      public void turnLightOff()
     {
         lightAnimation.SetTrigger("TurnOff");
+        lightAnimation.ResetTrigger("TurnOn");
     }
 
     public void setCardOpenTrue(){

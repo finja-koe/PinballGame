@@ -47,6 +47,7 @@ public class VerlagerungStatisch : MonoBehaviour
 
 
     float dirTimer;
+    float dirTimerMax=4;
     //public Text dirTimerText;
     float frameWert=200;
 
@@ -162,7 +163,7 @@ public class VerlagerungStatisch : MonoBehaviour
             if(timerLine>0.5f && timerLine<2)
             {
                 ballOnPlatform = true;
-                dirTimer=5;
+                dirTimer=dirTimerMax;
                 jumpd=0;
                 indicatorImage.color=pink;
                 indicatorImage.sprite=stripeLine;
@@ -253,7 +254,7 @@ public class VerlagerungStatisch : MonoBehaviour
     void dirTimerFunc()
     {
         dirTimer-= Time.deltaTime;
-        timeIndicatorRect.sizeDelta= new Vector2(dirTimer*440, timeIndicatorRect.sizeDelta.y); //440 = timeIndicator.maxWidth/dirTimermax
+        timeIndicatorRect.sizeDelta= new Vector2(dirTimer*2200/dirTimerMax, timeIndicatorRect.sizeDelta.y); //2200 = timeIndicator.maxWidth
         //timeIndicator.transform.localScale= new Vector3(dirTimer*0.18f, timeIndicator.transform.localScale.y,timeIndicator.transform.localScale.z);
         //float roundTimer = Mathf.RoundToInt(dirTimer);
         //dirTimerText.text=""+ roundTimer;
@@ -322,8 +323,8 @@ public class VerlagerungStatisch : MonoBehaviour
 
     public void resetDirTimer()
     {
-        dirTimer=5;
-        timeIndicatorRect.sizeDelta= new Vector2(dirTimer*440, timeIndicatorRect.sizeDelta.y);
+        dirTimer=dirTimerMax;
+        timeIndicatorRect.sizeDelta= new Vector2(dirTimer*2200/dirTimerMax, timeIndicatorRect.sizeDelta.y);
     
         resetJumpD();
     }
@@ -365,7 +366,7 @@ public class VerlagerungStatisch : MonoBehaviour
         jump = new Vector3(0,1,0);
         //ballRb.AddForce(jump * jumpf, ForceMode.Impulse);
         indicatorImage.sprite=stripeLine;
-        dirTimer=5;
+        dirTimer=dirTimerMax;
         jumpf=0;
         resetJumpD();
     }

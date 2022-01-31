@@ -17,7 +17,9 @@ public class AnimatorCanvas : MonoBehaviour
     public GameObject konfettiRObj;
     public GameObject konfettiLObj;
     public SerialScript serialScript;
+    public HintScript hintScript;
 
+    Animator uiAnimator;
     public CountdownScript countdownScript;
 
 
@@ -26,6 +28,8 @@ public class AnimatorCanvas : MonoBehaviour
     {
         konfettiL.Stop();
         konfettiR.Stop(); 
+
+        uiAnimator= GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -106,6 +110,17 @@ public class AnimatorCanvas : MonoBehaviour
     public void sendState( int x)
     {
         serialScript.sendState(x);
+    }
+
+    public void resetJumpHint()
+    {
+        hintScript.leaveHint();
+        
+    }
+
+    public void startHint()
+    {
+        hintScript.startHint();
     }
 
     
