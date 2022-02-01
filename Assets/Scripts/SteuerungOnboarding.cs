@@ -59,12 +59,12 @@ public class SteuerungOnboarding : MonoBehaviour
         indicatorImage = indicator.GetComponent<Image>();
         pink=indicator.GetComponent<Image>().color;
         transparent= new Color(pink.a,pink.g,pink.b,0);
-        Debug.Log("pink" + pink);
+        //Debug.Log("pink" + pink);
         originRotation = Quaternion.Euler( 0, 0, 0);
         onboardingScript=canvas.GetComponent<OnboardingScript>();
         timeIndicatorRect= timeIndicator.GetComponent<RectTransform>();
         jumpIndicatorRect=jumpIndicator.GetComponent<RectTransform>();
-        serialScript.sendState(4);
+        //serialScript.sendState(4);
 
 
     }
@@ -73,7 +73,7 @@ public class SteuerungOnboarding : MonoBehaviour
     void Update()
     {
 
-        Debug.Log("BallOnPlatform= " + ballOnPlatform+ " |start= " +start+ " |isActive= " + isActive);
+        //Debug.Log("BallOnPlatform= " + ballOnPlatform+ " |start= " +start+ " |isActive= " + isActive);
         if(isActive)
         {
             if(!start)
@@ -98,7 +98,7 @@ public class SteuerungOnboarding : MonoBehaviour
             {
                 
                 Vector3 screenPos = Camera.main.WorldToScreenPoint(ball.transform.position);
-                Debug.Log("Mach ich jetzt");
+                //Debug.Log("Mach ich jetzt");
                 indicator.transform.position=new Vector3 (screenPos.x-4f,screenPos.y,screenPos.z);
 
                 if(dirTimer<=0 && dirTimer >=-1)
@@ -123,7 +123,7 @@ public class SteuerungOnboarding : MonoBehaviour
 
                 else{
                     indicatorImage.sprite=loggedLine;
-                    Debug.Log("sprite:  "+ indicatorImage.sprite);
+                   // Debug.Log("sprite:  "+ indicatorImage.sprite);
                     makeJump();
                     onboardingScript.jumpNow();
                 }

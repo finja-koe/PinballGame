@@ -159,4 +159,9 @@ public class OnboardingScript : MonoBehaviour
         serialScript.sendState(state);
     }
 
+    public void disableSkip()
+    {
+        skipScript.enabled=false;
+    }
+
 }
