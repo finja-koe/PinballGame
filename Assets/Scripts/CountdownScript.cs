@@ -65,15 +65,11 @@ public class CountdownScript : MonoBehaviour
             countdownText.text=""+roundTime;
         }
         else{
-            //steuerungScript.enabled=true;
             uiScript.enabled=true;
             ballRb.WakeUp();
             countdown.SetActive(false);
             teleportScript.retryBallPos();
             lightsAnimation.SetTrigger("startGame");
-
-
-
         }
         }
 

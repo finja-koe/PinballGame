@@ -48,7 +48,6 @@ public class VerlagerungStatisch : MonoBehaviour
 
     float dirTimer;
     float dirTimerMax=4;
-    //public Text dirTimerText;
     float frameWert=200;
 
     float stuckTimer=0;
@@ -62,11 +61,9 @@ public class VerlagerungStatisch : MonoBehaviour
         jump = new Vector3(0.2f, jumph, 0f);
         ballRb = ball.GetComponent<Rigidbody>();
         indicatorImage = indicator.GetComponent<Image>();
-        //pink=indicator.GetComponent<Image>().color;
         pink= new Color(255,255,255,255);
         transparent= new Color(pink.a,pink.g,pink.b,0);
         Debug.Log("pink" + pink);
-        //freeMaterial=indicatorMaterial;
         originRotation = Quaternion.Euler( 0, 0, 0);
         timeIndicatorRect= timeIndicator.GetComponent<RectTransform>();
         jumpIndicatorRect=jumpIndicator.GetComponent<RectTransform>();
@@ -120,14 +117,12 @@ public class VerlagerungStatisch : MonoBehaviour
                 if((inputRotation<0 && jumpd>-jumpdMax) || (inputRotation>0 && jumpd<jumpdMax))
                 {
                     jumpd += 0.01f* inputRotation  ;
-                    //Debug.Log("Input= " +0.01f* inputRotation);
                 }
 
                 Quaternion target = Quaternion.Euler( 0, 0, (jumpd/jumpdMax) *-45);
                 indicator.transform.rotation = Quaternion.Slerp(indicator.transform.rotation, target,  0.1f*Time.deltaTime*frameWert);
-
                 Vector3 targetPos= new Vector3(0,0.113f, 0);
-                //ballRb.AddForce((targetPos-ball.transform.position)*10* Time.smoothDeltaTime);
+
             }
 
             // Wenn VerlagerungZeit abgelaufen 
@@ -231,7 +226,6 @@ public class VerlagerungStatisch : MonoBehaviour
             {
             jumpf+=13f*Time.deltaTime;  //Hier Wert verändern damit Jump stärker wird
             jumpfTime+= Time.deltaTime;
-            //vDebug.Log("jumpf:" +jumpf);
             }
             
         }
@@ -239,7 +233,6 @@ public class VerlagerungStatisch : MonoBehaviour
         {
             jumpFeedback.text=getJumpFeedBack(jumpf, jumpfMax);
             uiAnimation.SetTrigger("jumpFeedback");
-            //Debug.Log("Jumpf= "+jumpf);
             jump = new Vector3(jumpd, jumph, 0f);
             ballRb.AddForce(jump * jumpf, ForceMode.Impulse);
             jumpf=0;
@@ -255,9 +248,7 @@ public class VerlagerungStatisch : MonoBehaviour
     {
         dirTimer-= Time.deltaTime;
         timeIndicatorRect.sizeDelta= new Vector2(dirTimer*2200/dirTimerMax, timeIndicatorRect.sizeDelta.y); //2200 = timeIndicator.maxWidth
-        //timeIndicator.transform.localScale= new Vector3(dirTimer*0.18f, timeIndicator.transform.localScale.y,timeIndicator.transform.localScale.z);
-        //float roundTimer = Mathf.RoundToInt(dirTimer);
-        //dirTimerText.text=""+ roundTimer;
+
     }
 
     //Für Kamera rotation -> Nicht mehr mit drin (Übersetzt BallPos in Kamera Rotation)
@@ -266,21 +257,12 @@ public class VerlagerungStatisch : MonoBehaviour
         return b1 + (s-a1)*(b2-b1)/(a2-a1);
     }
 
-    // Rotiert Kamera -> Nicht mehr mit drin
-    void moveCamera()
-    {
-        float angle= map(ball.transform.position.y, 0.2f,4.4f,-1.5f,1.5f);
-        
-        Quaternion cameraAngle=  Quaternion.Euler(-angle,camera.transform.rotation.y , camera.transform.rotation.z);
-        camera.transform.rotation = Quaternion.Slerp(camera.transform.rotation, cameraAngle,  0.9f*Time.deltaTime*frameWert);
-        //Debug.Log("angle= "+ cameraAngle);
-    }
 
     //Reset JumpD nach Sprung wird von TeleportScript aufgerufen
     public void resetJumpD(){
         jumpd=0;
         indicator.transform.rotation=  Quaternion.Euler(0,0,0);
-        //Debug.Log("resetJumpD");
+
     }
 
     string getJumpFeedBack(float jumpfCurrent, float maxForce)
@@ -364,7 +346,6 @@ public class VerlagerungStatisch : MonoBehaviour
     public void jumpAfterLeaveBack()
     {
         jump = new Vector3(0,1,0);
-        //ballRb.AddForce(jump * jumpf, ForceMode.Impulse);
         indicatorImage.sprite=stripeLine;
         dirTimer=dirTimerMax;
         jumpf=0;
