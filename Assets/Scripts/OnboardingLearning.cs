@@ -42,7 +42,7 @@ public class OnboardingLearning : MonoBehaviour
             if(!leftDone )
             {
             Vector3 screenPos = Camera.main.WorldToScreenPoint(ball.transform.position);
-            Debug.Log("target is " + screenPos);
+            //Debug.Log("target is " + screenPos);
             indicator.transform.position=new Vector3 (screenPos.x-4f,screenPos.y,screenPos.z);
             float inputRotation= checkWichKeyisPressed()*Time.deltaTime*frameWert*2f;
             Quaternion target = Quaternion.Euler( 0, 0, (jumpd/jumpdMax) *-45);
@@ -55,7 +55,7 @@ public class OnboardingLearning : MonoBehaviour
                 cntUp++;
                 if(cntUp>20)
                 {
-                    Debug.Log("SKIPPPPPPPPPPPPPPPP");
+                   // Debug.Log("SKIPPPPPPPPPPPPPPPP");
                 }
             }
             else{
