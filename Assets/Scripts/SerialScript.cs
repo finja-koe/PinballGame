@@ -38,6 +38,8 @@ public class SerialScript : MonoBehaviour
         {
             sp.Open();
             Debug.Log("opened sp");
+
+            
         } 
     }
 

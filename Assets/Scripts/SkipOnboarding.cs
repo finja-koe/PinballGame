@@ -42,7 +42,7 @@ public class SkipOnboarding : MonoBehaviour
         }
         else{
            
-            if(timerCnt>=5)
+            if(timerCnt>=3)
             {
                 uiAnimation.SetTrigger("dontSkipGame");
             }
@@ -52,7 +52,7 @@ public class SkipOnboarding : MonoBehaviour
             timerCnt+= Time.deltaTime;
             if(timerCnt<5)
             {
-                balkenTimer.sizeDelta= new Vector2( 570-(545*(timerCnt/5)), balkenTimer.sizeDelta.y);
+                balkenTimer.sizeDelta= new Vector2( 570-(545*(timerCnt/3)), balkenTimer.sizeDelta.y);
             }
         }
 
