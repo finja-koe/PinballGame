@@ -229,7 +229,7 @@ public class VerlagerungStatisch : MonoBehaviour
         {   
             if(jumpf<=jumpfMax)
             {
-            jumpf+=12f*Time.deltaTime;  //Hier Wert verändern damit Jump stärker wird
+            jumpf+=13f*Time.deltaTime;  //Hier Wert verändern damit Jump stärker wird
             jumpfTime+= Time.deltaTime;
             //vDebug.Log("jumpf:" +jumpf);
             }
