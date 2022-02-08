@@ -63,30 +63,30 @@ public class BlinkingScript : MonoBehaviour
         if(doBlink){
             if(lerpToMax)
             {
-                bloom.intensity.value=Mathf.Lerp(bloom.intensity.value,bloomMax,0.05f *Time.deltaTime*framewert);
+                //bloom.intensity.value=Mathf.Lerp(bloom.intensity.value,bloomMax,0.05f *Time.deltaTime*framewert);
                 nextColorBall= Color.Lerp(currentColorBall,colorBright,0.05f*Time.deltaTime*framewert);
                 nextColorShell= Color.Lerp(currentColorShell,colorBright,0.05f*Time.deltaTime*framewert);
 
                 ballMaterial.SetColor("_Color",nextColorBall);
                 shellMaterial.SetColor("_Color",nextColorShell);
 
-                if(bloomMax-bloom.intensity.value<=0.06)
+                if(colorBright.r-nextColorBall.r<= 0.003) //bloomMax-bloom.intensity.value<=0.06)
                 {
                     lerpToMax=false;
                 }
             }
             if(!lerpToMax)
             {
-                bloom.intensity.value=Mathf.Lerp(bloom.intensity.value,0,0.05f*Time.deltaTime*framewert);
+                //bloom.intensity.value=Mathf.Lerp(bloom.intensity.value,0,0.05f*Time.deltaTime*framewert);
                 nextColorBall= Color.Lerp(currentColorBall,colorNormal,0.05f*Time.deltaTime*framewert);
                 nextColorShell= Color.Lerp(currentColorShell,colorNormal,0.05f*Time.deltaTime*framewert);
 
                 ballMaterial.SetColor("_Color",nextColorBall);
                 shellMaterial.SetColor("_Color",nextColorShell);
 
-                if(bloom.intensity.value<=0.06)
+                if(currentColorBall.r-colorNormal.r<= 0.003) //bloom.intensity.value<=0.06
                 {
-                    bloom.intensity.value=0;
+                    //bloom.intensity.value=0;
                     ballMaterial.SetColor("_Color",colorNormal);
                     shellMaterial.SetColor("_Color",colorNormal);
 
