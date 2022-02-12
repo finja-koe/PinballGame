@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1097, y: 1900}
+  m_AnchoredPosition: {x: 1097, y: 1838.2}
   m_SizeDelta: {x: 654.3, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &15710319
@@ -180,9 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hello!
-
-    Let''s start with a quick tutorial'
+  m_text: Let's start with a quick tutorial
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19d1b9a755fcd9b41bb994e8cfa4919a, type: 2}
   m_sharedMaterial: {fileID: -6212194609165283162, guid: 19d1b9a755fcd9b41bb994e8cfa4919a, type: 2}
@@ -791,7 +789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &124362055
 RectTransform:
   m_ObjectHideFlags: 0
@@ -808,7 +806,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1491, y: 2379.8}
+  m_AnchoredPosition: {x: 1104.2, y: 2310}
   m_SizeDelta: {x: 965.7, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &124362056
@@ -831,7 +829,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Welcome \n to "
+  m_text: Hello!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19d1b9a755fcd9b41bb994e8cfa4919a, type: 2}
   m_sharedMaterial: {fileID: -6212194609165283162, guid: 19d1b9a755fcd9b41bb994e8cfa4919a, type: 2}
@@ -858,14 +856,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 84.7
-  m_fontSizeBase: 84.7
+  m_fontSize: 148
+  m_fontSizeBase: 148
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 16
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 3.7
@@ -3833,7 +3831,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &704449150
 RectTransform:
   m_ObjectHideFlags: 0
