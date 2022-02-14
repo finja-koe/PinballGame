@@ -15,6 +15,7 @@ public class SerialScript : MonoBehaviour
     bool serialAvailable=false;
     float time;
     float period=1;
+    int currentState=0;
 
     // Start is called before the first frame update
     void Start()
@@ -99,6 +100,7 @@ public class SerialScript : MonoBehaviour
 
     public void sendState(int state)
     {
+        currentState=state;
         if(serialAvailable)
         {
             try{

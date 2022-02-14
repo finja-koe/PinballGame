@@ -5,24 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 1
     path: Assets/Scenes/IdleScreen.unity
     guid: 263cf34aa8fe3e3478e29ee11a9fd70a
   - enabled: 1
     path: Assets/Scenes/OnboardingV2.unity
     guid: 978716a2c3a029c47a2b7cbadd864249
-  - enabled: 0
-    path: Assets/Scenes/Onboarding.unity
-    guid: 8ee603b64c845cc4082bafc00d646dee
-  - enabled: 0
-    path: Assets/Scenes/LevelColorTest.unity
-    guid: 9206a211ca843c4448dee86d597f130f
-  - enabled: 0
-    path: Assets/Scenes/LevelColoring.unity
-    guid: 819a9ddd8086e98489e0e11f95ed29c5
   - enabled: 1
     path: Assets/Scenes/LevelMain.unity
     guid: c15517d437db05b42b61616a4275e2a1

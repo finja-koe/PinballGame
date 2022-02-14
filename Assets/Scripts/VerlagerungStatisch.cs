@@ -67,7 +67,7 @@ public class VerlagerungStatisch : MonoBehaviour
         originRotation = Quaternion.Euler( 0, 0, 0);
         timeIndicatorRect= timeIndicator.GetComponent<RectTransform>();
         jumpIndicatorRect=jumpIndicator.GetComponent<RectTransform>();
-        indicator.transform.position=new Vector3 (536.4f,218.3f,4.9f);
+        //indicator.transform.position=new Vector3 (536.4f,218.3f,4.9f);
         
 
     }
