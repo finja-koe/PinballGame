@@ -41,6 +41,7 @@ public class VerlagerungStatisch : MonoBehaviour
     float jumpd = 0;
     float jumpdMax= 5.5f; //vorher 4
     public float jumpfMax=2;
+    bool jumpPhase= false;
 
     Vector3 jump;
     bool ballOnPlatform = false;
@@ -78,7 +79,13 @@ public class VerlagerungStatisch : MonoBehaviour
         checkIfStuck();
         // Setzt Größe von JumpIndicator
         //jumpIndicator.transform.localScale= new Vector3(jumpf/jumpfMax,jumpIndicator.transform.localScale.y,jumpIndicator.transform.localScale.z);
-        jumpIndicatorRect.sizeDelta= new Vector2(jumpf/jumpfMax*2180,jumpIndicatorRect.sizeDelta.y);
+        if(jumpPhase)
+        {
+            jumpIndicatorRect.sizeDelta= new Vector2(jumpf/jumpfMax*2180,jumpIndicatorRect.sizeDelta.y);
+        }
+        else{
+            jumpIndicatorRect.sizeDelta= new Vector2(0,jumpIndicatorRect.sizeDelta.y);
+        }
         
         //Macht DirIndicator gerade, nachdem er ausgeblendet wurde
         if(indicatorImage.color==transparent)
@@ -110,6 +117,8 @@ public class VerlagerungStatisch : MonoBehaviour
             //Wenn Richtung eingestellt wird
             if(dirTimer>0)
             {
+                jumpPhase=false;
+                jumpf=0;
                 dirTimerFunc();
 
                 //Setzt Rotation von dirIndicator
@@ -128,6 +137,7 @@ public class VerlagerungStatisch : MonoBehaviour
             // Wenn VerlagerungZeit abgelaufen 
             else{
                 indicatorImage.sprite=loggedLine;
+                jumpPhase=true;
                 makeJump();
                
             }
